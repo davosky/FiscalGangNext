@@ -1,0 +1,142 @@
+<!-- NEW -->
+<div class='modal fade' id='show_request'>
+  <div class='modal-dialog modal-lg'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <div class='container'>
+          <div class='row'>
+            <div class='col-12'>
+              <h5 class='modal-title text-primary'>
+                <i class='fas fa-file-contract'></i>
+                &nbsp;&nbsp;
+                Richiesta Pratica n° <%= @request.name %> del <%= l(@request.date) %>
+                <br/>
+                <small>
+                  (&nbsp;&nbsp;Creata da : 
+                  <%= "#{@request.operator.name} #{@request.operator.last_name} - #{@request.operator.category} - #{@request.operator.phone}" %>&nbsp;&nbsp;)
+                </small>
+              </h5>
+              <br/>
+              <hr class='hr-primary'/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='modal-body'>
+        <div class='row'>
+          <div class='col-6'>
+            <section class="landing">
+              <div class="container">
+                <dl class="row">
+                  <dt class="col-6 text-right text-secondary">
+                    Cognome:&nbsp;
+                  </dt>
+                  <dd class="col-6 text-left text-primary">
+                    <strong>
+                      <%= @request.last_name %>
+                    </strong>
+                  </dd>
+                  <dt class="col-6 text-right text-secondary">
+                    Nome:&nbsp;
+                  </dt>
+                  <dd class="col-6 text-left text-primary">
+                    <strong>
+                      <%= @request.first_name %>
+                    </strong>
+                  </dd>
+                  <dt class="col-6 text-right text-secondary">
+                    Telefono:&nbsp;
+                  </dt>
+                  <dd class="col-6 text-left text-primary">
+                    <strong>
+                      <%= @request.mobile %>
+                    </strong>
+                  </dd>
+                  <dt class="col-6 text-right text-secondary">
+                    E-Mail:&nbsp;
+                  </dt>
+                  <dd class="col-6 text-left text-primary">
+                    <strong>
+                      <%= @request.email %>
+                    </strong>
+                  </dd>
+                </dl>
+              </div>
+            </section>
+          </div>
+          <div class='col-6'>
+            <div class='container'>
+              <div class='row'>
+                <dl class='row'>
+                  <dt class='col-3 text-right text-secondary'>
+                    Pratica:&nbsp;
+                  </dt>
+                  <dd class='col-9 text-left text-primary'>
+                    <strong>
+                      <%= @request.practice.name %>
+                    </strong>
+                  </dd>
+                  <dt class='col-3 text-right text-secondary'>
+                    Iscrizione:
+                  </dt>
+                  <dd class='col-9 text-left'>
+                    <% if @request.category_id != nil %>
+                      <i class='<%= subscriber?(@request) %>'></i>
+                      &nbsp;<strong class='text-danger'><%= @request.category.name %></strong>
+                    <% else %>
+                      <i class='<%= subscriber?(@request) %>'></i>
+                      &nbsp;<strong class='text-success'>NON ISCRITTO</strong>
+                    <% end %>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-1'>&nbsp;</div>
+          <div class='col-11'>
+            <% unless @request.note == nil || @request.note.blank? %>
+              <span class='text-secondary'>
+                <strong>
+                  Note :
+                </strong>
+              </span>
+              <br/>
+              <%= @request.note %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class='modal-footer'>
+        <div class='container'>
+          <div class='row'>
+            <div class='col-12'>
+              <hr class='hr-primary'/>
+              <% if @request.processed == true %>
+                <span class='float-left'>
+                  <small>
+                    Richiesta presa in carico e processata da:
+                    &nbsp;&nbsp;
+                    <%= @request.updater %>
+                    &nbsp;&nbsp;
+                    in data:
+                    &nbsp;&nbsp;
+                    <%= l(@request.updated_at, format: '%A %d %B %Y') %>
+                  </small>
+                </span>
+              <% end %>
+              <span class='float-right'>
+                <div class='form-group'>
+                  <button type='button' class='btn btn-primary' data-dismiss='modal'>
+                    <%= icon('fas', 'times') %>&nbsp;Chiudi
+                  </button>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

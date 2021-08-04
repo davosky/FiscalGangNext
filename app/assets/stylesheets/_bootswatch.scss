@@ -1,0 +1,390 @@
+// Flatly 4.6.0
+// Bootswatch
+
+// Variables ===================================================================
+
+$web-font-path: "https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" !default;
+@if $web-font-path {
+  @import url($web-font-path);
+}
+
+// Global =======================================================================
+
+body {
+  padding-top: 6.4rem;
+}
+
+* {
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+// Navbar =======================================================================
+
+.bg-primary {
+  .navbar-nav .active > .nav-link {
+    color: $success !important;
+  }
+}
+
+.bg-dark {
+  &.navbar-dark .navbar-nav {
+    .nav-link:focus,
+    .nav-link:hover,
+    .active > .nav-link {
+      color: $primary !important;
+    }
+  }
+}
+
+// Buttons =====================================================================
+
+.btn {
+  &-secondary,
+  &-secondary:hover,
+  &-warning,
+  &-warning:hover {
+    color: $white;
+  }
+}
+
+// Tables ======================================================================
+
+.table {
+  &-primary,
+  &-secondary,
+  &-success,
+  &-info,
+  &-warning,
+  &-danger {
+    color: $white;
+  }
+
+  &-primary {
+    &,
+    > th,
+    > td {
+      background-color: $primary;
+    }
+  }
+
+  &-secondary {
+    &,
+    > th,
+    > td {
+      background-color: $secondary;
+    }
+  }
+
+  &-light {
+    &,
+    > th,
+    > td {
+      background-color: $light;
+    }
+  }
+
+  &-dark {
+    &,
+    > th,
+    > td {
+      background-color: $dark;
+    }
+  }
+
+  &-success {
+    &,
+    > th,
+    > td {
+      background-color: $success;
+    }
+  }
+
+  &-info {
+    &,
+    > th,
+    > td {
+      background-color: $info;
+    }
+  }
+
+  &-danger {
+    &,
+    > th,
+    > td {
+      background-color: $danger;
+    }
+  }
+
+  &-warning {
+    &,
+    > th,
+    > td {
+      background-color: $warning;
+    }
+  }
+
+  &-active {
+    &,
+    > th,
+    > td {
+      background-color: $table-active-bg;
+    }
+  }
+
+  &-hover {
+    .table-primary:hover {
+      &,
+      > th,
+      > td {
+        background-color: darken($primary, 5%);
+      }
+    }
+
+    .table-secondary:hover {
+      &,
+      > th,
+      > td {
+        background-color: darken($secondary, 5%);
+      }
+    }
+
+    .table-light:hover {
+      &,
+      > th,
+      > td {
+        background-color: darken($light, 5%);
+      }
+    }
+
+    .table-dark:hover {
+      &,
+      > th,
+      > td {
+        background-color: darken($dark, 5%);
+      }
+    }
+
+    .table-success:hover {
+      &,
+      > th,
+      > td {
+        background-color: darken($success, 5%);
+      }
+    }
+
+    .table-info:hover {
+      &,
+      > th,
+      > td {
+        background-color: darken($info, 5%);
+      }
+    }
+
+    .table-danger:hover {
+      &,
+      > th,
+      > td {
+        background-color: darken($danger, 5%);
+      }
+    }
+
+    .table-warning:hover {
+      &,
+      > th,
+      > td {
+        background-color: darken($warning, 5%);
+      }
+    }
+
+    .table-active:hover {
+      &,
+      > th,
+      > td {
+        background-color: $table-active-bg;
+      }
+    }
+  }
+}
+
+// Navs ========================================================================
+
+.nav-tabs {
+  .nav-link.active,
+  .nav-link.active:focus,
+  .nav-link.active:hover,
+  .nav-item.open .nav-link,
+  .nav-item.open .nav-link:focus,
+  .nav-item.open .nav-link:hover {
+    color: $primary;
+  }
+}
+
+.pagination {
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+// Indicators ==================================================================
+
+.close {
+  text-decoration: none;
+  opacity: 0.4;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.badge {
+  &-secondary,
+  &-warning {
+    color: $white;
+  }
+}
+
+.alert {
+  border: none;
+  color: $white;
+
+  a,
+  .alert-link {
+    color: $white;
+    text-decoration: underline;
+  }
+
+  @each $color, $value in $theme-colors {
+    &-#{$color} {
+      @if $enable-gradients {
+        background: $value
+          linear-gradient(180deg, mix($body-bg, $value, 15%), $value)
+          repeat-x;
+      } @else {
+        background-color: $value;
+      }
+    }
+  }
+
+  &-light {
+    &,
+    a,
+    .alert-link {
+      color: $body-color;
+    }
+  }
+}
+
+// Containers ==================================================================
+
+.modal,
+.toast {
+  .close {
+    color: $black;
+
+    &:not(:disabled):not(.disabled):hover,
+    &:not(:disabled):not(.disabled):focus {
+      color: $black;
+    }
+  }
+}
+
+// Custom =========================================================================
+
+.hr-primary {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $primary;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.hr-secondary {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $secondary;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.hr-info {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $info;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.hr-warning {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $warning;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.hr-success {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $success;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.hr-danger {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $danger;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-footer {
+  border: none;
+}
+
+.card {
+  background-color: $gray-100;
+}
+
+.text-tertiary {
+  color: $tertiary;
+}
+
+.card:hover {
+  background-color: $light-blue;
+}
+
+.bg-processed {
+  background-color: $light-green !important;
+}
+
+.input-group-text {
+  width: 8rem !important;
+  background-color: $gray-300;
+  border-color: $gray-500;
+}
+
+.form-control {
+  border-color: $gray-500;
+}
+
+.page-link {
+  background-color: $primary;
+}
+
+.page-link:hover {
+  background-color: lighten($primary, 19%);
+}

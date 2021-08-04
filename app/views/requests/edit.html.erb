@@ -1,0 +1,28 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col'>
+      <h4 class='text-warning'>
+        <i class='fas fa-pencil-alt'></i>
+        &nbsp;&nbsp;
+        <i class='fas fa-file-contract'></i>
+        &nbsp;&nbsp;
+        Modifica Richiesta Pratica
+        <span class='float-right'>
+          <%= link_to requests_path, class: 'btn btn-primary btn-sm' do %>
+            <i class='fas fa-arrow-left'></i>
+            &nbsp;
+            <i class='fas fa-file-contract'></i>
+            &nbsp;
+            Ritorna alla lista
+          <% end %>
+        </span>
+      </h4>
+    </div>
+  </div>
+  <hr class='hr-primary'/>
+  <div class='row'>
+    <div class='col'>
+      <%= render 'form', request: @request %>
+    </div>
+  </div>
+</div>

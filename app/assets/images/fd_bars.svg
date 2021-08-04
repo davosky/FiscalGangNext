@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="14"
+   height="14"
+   viewBox="0 0 3.7041667 3.7041667"
+   version="1.1"
+   id="svg18108"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   sodipodi:docname="fd_bars.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview18110"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:showpageshadow="false"
+     inkscape:zoom="8.71875"
+     inkscape:cx="14.910394"
+     inkscape:cy="29.075269"
+     inkscape:window-width="2528"
+     inkscape:window-height="1048"
+     inkscape:window-x="32"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs18105" />
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g18610"
+       transform="matrix(0.30093413,0,0,0.30093413,-0.0587308,-0.05902468)">
+      <g
+         id="path18225">
+        <path
+           style="color:#000000;fill:#e6e6e6;stroke-width:2.64583;stroke-linecap:round;stroke-linejoin:bevel;-inkscape-stroke:none"
+           d="m 1.957779,2.3812484 h 8.784442"
+           id="path18451" />
+        <path
+           style="color:#000000;fill:#e6e6e6;stroke-linecap:round;stroke-linejoin:bevel;-inkscape-stroke:none"
+           d="M 1.9570312,1.0585937 A 1.322915,1.322915 0 0 0 0.63476562,2.3808594 1.322915,1.322915 0 0 0 1.9570312,3.7050781 H 10.742188 A 1.322915,1.322915 0 0 0 12.064453,2.3808594 1.322915,1.322915 0 0 0 10.742188,1.0585937 Z"
+           id="path18453" />
+      </g>
+      <g
+         id="path18373">
+        <path
+           style="color:#000000;fill:#e6e6e6;stroke-width:2.64583;stroke-linecap:round;stroke-linejoin:bevel;-inkscape-stroke:none"
+           d="m 1.957779,6.35 h 8.784442"
+           id="path18459" />
+        <path
+           style="color:#000000;fill:#e6e6e6;stroke-linecap:round;stroke-linejoin:bevel;-inkscape-stroke:none"
+           d="M 1.9570312,5.0273437 A 1.322915,1.322915 0 0 0 0.63476562,6.3496094 1.322915,1.322915 0 0 0 1.9570312,7.6738281 H 10.742188 A 1.322915,1.322915 0 0 0 12.064453,6.3496094 1.322915,1.322915 0 0 0 10.742188,5.0273437 Z"
+           id="path18461" />
+      </g>
+      <g
+         id="path18375">
+        <path
+           style="color:#000000;fill:#e6e6e6;stroke-width:2.64583;stroke-linecap:round;stroke-linejoin:bevel;-inkscape-stroke:none"
+           d="m 1.957779,10.318751 h 8.784442"
+           id="path18467" />
+        <path
+           style="color:#000000;fill:#e6e6e6;stroke-linecap:round;stroke-linejoin:bevel;-inkscape-stroke:none"
+           d="M 1.9570312,8.9960938 A 1.322915,1.322915 0 0 0 0.63476562,10.318359 1.322915,1.322915 0 0 0 1.9570312,11.642578 h 8.7851568 a 1.322915,1.322915 0 0 0 1.322265,-1.324219 1.322915,1.322915 0 0 0 -1.322265,-1.3222652 z"
+           id="path18469" />
+      </g>
+    </g>
+  </g>
+</svg>

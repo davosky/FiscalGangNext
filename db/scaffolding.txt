@@ -1,0 +1,25 @@
+Request
+
+name                    Codice
+date                    Data
+practice                Pratica
+first_name              Nome
+last_name               Cognome
+mobile                  Cellulare
+email                   E-Mail
+subscriber              Iscritto
+category                Categoria Iscritto
+note                    Note
+taking_charge           Presa in Carico
+operator                Operatore
+
+rails g model Category name position:integer
+
+rails g model Practice name position:integer
+
+rails g scaffold Request name:integer date:date practice:references first_name last_name mobile email subscriber:boolean category:references note:text operator:references
+
+rails g migration AddColumnToRequest processed:boolean updater
+
+rails g migration AddPhoneToOperator phone
+

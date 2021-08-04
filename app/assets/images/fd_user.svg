@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="14"
+   height="14"
+   viewBox="0 0 3.7041667 3.7041667"
+   version="1.1"
+   id="svg18108"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   sodipodi:docname="fd_user.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview18110"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:showpageshadow="false"
+     inkscape:zoom="42.274884"
+     inkscape:cx="5.9373315"
+     inkscape:cy="8.3146296"
+     inkscape:window-width="2528"
+     inkscape:window-height="1048"
+     inkscape:window-x="32"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs18105" />
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect18678"
+       style="color:#000000;fill:#e6e6e6;stroke-width:3.58287;stroke-linecap:round;stroke-linejoin:bevel;-inkscape-stroke:none"
+       d="M 1.8523416,0.17465993 A 0.9362908,0.9362908 0 0 0 0.91610538,1.1108963 0.9362908,0.9362908 0 0 0 1.8523416,2.0471326 0.9362908,0.9362908 0 0 0 2.7885778,1.1108963 0.9362908,0.9362908 0 0 0 1.8523416,0.17465993 Z M 1.4870441,2.2439902 c -0.75020412,0 -1.35475244,0.2440294 -1.35475244,0.8928347 V 3.5295068 H 3.571875 V 3.1368249 c 0,-0.6488053 -0.6040316,-0.8928347 -1.3542359,-0.8928347 z" />
+  </g>
+</svg>

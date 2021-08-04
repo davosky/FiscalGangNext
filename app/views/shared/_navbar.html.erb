@@ -1,0 +1,54 @@
+<nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+  <%= link_to root_path, class: 'navbar-brand' do %>
+    <%= image_tag('navbar_logo.svg', class: 'img-fluid') %>
+  <% end %>
+  <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation'>
+    <span class='navbar-toggler-icon'></span>
+  </button>
+  <div class='collapse navbar-collapse' id='navbarColor01'>
+    <ul class='navbar-nav mr-auto'>
+      <li class='nav-item'>
+        <%= link_to requests_path, class: 'nav-link' do %>
+          <%= icon('fas', 'file-contract') %>
+          &nbsp;&nbsp;
+          Richieste Pratica
+        <% end %>
+      </li>
+      <% unless current_operator.category == 'CAAF' %>
+        <li class='nav-item'>
+          <%= link_to new_request_path, class: 'nav-link' do %>
+            <%= icon('fas', 'plus') %>
+            &nbsp;
+            <%= icon('fas', 'file-contract') %>
+            &nbsp;&nbsp;
+            Nuova Richiesta Pratica
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+    <ul class='navbar-nav ml-auto'>
+      <li class='nav-item'>
+        <%= link_to edit_operator_registration_path, class: 'nav-link nav-link-warning' do %>
+          <%= icon('fas', 'user') %>&nbsp;&nbsp;<%= full_operator %>
+        <% end %>
+      </li>
+      <li class='nav-item dropleft'>
+        <a class='nav-link dropdown dropdown-link-warning' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>
+          <%= icon('fas', 'bars') %>
+        </a>
+        <div class='dropdown-menu'>
+          <% if admin? %>
+            <%= link_to rails_admin_path, class: 'dropdown-item'  do %>
+              <%= icon('fas', 'user-cog') %>&nbsp;&nbsp;Amministrazione
+            <% end %>
+          <% end %>
+          <div class='dropdown-divider'></div>
+          <%= link_to destroy_operator_session_path, method: :delete, class: 'dropdown-item' do %>
+            <%= icon('fas', 'door-open') %>&nbsp;&nbsp;Esci
+          <% end %>
+        </div>
+      </li>
+    </ul>
+  </ul>
+</div>
+</nav>

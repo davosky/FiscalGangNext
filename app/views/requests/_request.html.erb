@@ -1,0 +1,77 @@
+<% if current_operator.category == 'CESI' || current_operator.category == 'CAAF' %>
+  <div class='row' id='<%= request.id %>'>
+    <div class='col' >
+      <div class='card mb-3 <%= processed?(request) %>'>
+        <div class='card-body'>
+          <% unless request.note == nil || request.note.blank? %>
+            <%= link_to request, class: 'btn btn-sm btn-primary', title: 'Dettaglio con Note', remote: true do %>
+              <%= request.name %>&nbsp;&nbsp;<i class='fas fa-clipboard text-warning'></i>
+            <% end %>
+          <% else %>
+            <%= link_to request.name, request, class: 'btn btn-sm btn-primary', title: 'Dettaglio', remote: true %>
+          <% end %>
+          &nbsp;&nbsp;
+          <i class="far fa-calendar-alt text-tertiary"></i>&nbsp;&nbsp;<%= l(request.date) %>
+          &nbsp;&nbsp;
+          <i class="far fa-user text-tertiary"></i>&nbsp;&nbsp;<%= "#{request.last_name} #{request.first_name}" %>
+          &nbsp;&nbsp;
+          <i class="fas fa-mobile-alt text-tertiary"></i>&nbsp;&nbsp;<%= request.mobile %>
+          &nbsp;&nbsp;
+          <i class="far fa-envelope text-tertiary"></i>&nbsp;&nbsp;<%= mail_to(request.email) %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <i class="fas fa-file-contract text-tertiary"></i><strong>&nbsp;&nbsp;<%= request.practice.name %></strong>
+          <span class='float-right'>
+            <% if request.category_id != nil %>
+              <i class='<%= subscriber?(request) %>'></i>
+              &nbsp;<strong class='text-danger'><%= request.category.name %></strong>
+            <% else %>
+              <i class='<%= subscriber?(request) %>'></i>
+              &nbsp;<strong class='text-success'>NON ISCRITTO</strong>
+            <% end %>
+            <% if request.processed == false %>
+              &nbsp;&nbsp;|
+              &nbsp;&nbsp;
+              <%= link_to edit_request_path(request), class:'btn btn-sm btn-primary', title: 'Prendi in Carico', remote: true do %>
+                <i class="fas fa-tools"></i>
+              <% end %>
+            <% end %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class='row' id='<%= request.id %>'>
+    <div class='col' >
+      <div class='card mb-3 <%= processed?(request) %>'>
+        <div class='card-body'>
+          <i class="far fa-calendar-alt text-tertiary"></i>&nbsp;&nbsp;<%= l(request.date) %>
+          &nbsp;&nbsp;
+          <i class="far fa-user text-tertiary"></i>&nbsp;&nbsp;<%= "#{request.last_name} #{request.first_name}" %>
+          &nbsp;&nbsp;
+          <i class="fas fa-mobile-alt text-tertiary"></i>&nbsp;&nbsp;<%= request.mobile %>
+          &nbsp;&nbsp;
+          <i class="far fa-envelope text-tertiary"></i>&nbsp;&nbsp;<%= mail_to(request.email) %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <i class="fas fa-file-contract text-tertiary"></i><strong>&nbsp;&nbsp;<%= request.practice.name %></strong>
+          <span class='float-right'>
+            <% if request.category_id != nil %>
+              <i class='<%= subscriber?(request) %>'></i>
+              &nbsp;<strong class='text-danger'><%= request.category.name %></strong>
+            <% else %>
+              <i class='<%= subscriber?(request) %>'></i>
+              &nbsp;<strong class='text-success'>NON ISCRITTO</strong>
+            <% end %>
+            <% if request.processed == false %>
+              &nbsp;&nbsp;|
+              &nbsp;&nbsp;
+              <%= link_to request, method: :delete, data: { confirm: 'Sei sicura/o di voler eliminare il record Corrente?' }, title: 'Elimina la Richiesta Corrente', rel: 'tooltip' do %>
+                <i class='fas fa-trash-alt text-danger'></i>
+              <% end %>
+            <% end %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

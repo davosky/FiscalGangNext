@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="14"
+   height="14"
+   viewBox="0 0 3.7041667 3.7041667"
+   version="1.1"
+   id="svg18108"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   sodipodi:docname="fd_administration_d.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview18110"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:showpageshadow="false"
+     inkscape:zoom="29.892857"
+     inkscape:cx="10.60454"
+     inkscape:cy="9.1158901"
+     inkscape:window-width="2528"
+     inkscape:window-height="1048"
+     inkscape:window-x="32"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs18105" />
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       fill="currentColor"
+       d="m 0.13230459,1.4667211 c -0.001023,-0.05513 0.058969,-0.089984 0.10673367,-0.062403 L 0.77880612,1.7159535 C 1.0072479,1.6577147 1.1482643,1.4089349 1.1106841,1.1411248 L 0.5709163,0.82948977 C 0.52286589,0.80174777 0.523824,0.73227512 0.57238964,0.705394 0.82562492,0.56550278 1.143694,0.55788496 1.4124775,0.71302804 1.700218,0.87915511 1.8508183,1.1913712 1.8332106,1.5034983 L 3.3821764,2.3977939 C 3.5635753,2.5025249 3.625732,2.7344965 3.5210013,2.9158955 3.4162704,3.0972935 3.1842985,3.1594502 3.0029006,3.0547202 L 1.4552419,2.1611781 C 1.1939442,2.3337241 0.84870374,2.3585534 0.55907502,2.1913349 0.28998895,2.0359786 0.13753381,1.756228 0.13230406,1.4667258 Z"
+       id="path20648"
+       style="stroke-width:0.00592682;fill:#2c3e50;fill-opacity:1"
+       sodipodi:nodetypes="cccccccccsccccc" />
+  </g>
+</svg>

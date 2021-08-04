@@ -1,0 +1,49 @@
+<div class='card'>
+  <p>&nbsp;</p>
+  <%= image_tag('main_logo.svg', class: 'img-fluid') %>
+  <div class='card-body'>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class='form-row align-items-center'>
+        <div class='col'>
+          <div class='input-group'>
+            <div class='input-group-prepend'>
+              <div class='input-group-text input-group-text-form'>
+                <i class='fas fa-user'></i>
+              </div>
+            </div>
+            <%= f.text_field :username, autofocus: true, autocomplete: 'username', class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br/>
+      <div class='form-row align-items-center'>
+        <div class='col'>
+          <div class='input-group'>
+            <div class='input-group-prepend'>
+              <div class='input-group-text input-group-text-form'>
+                <i class='fas fa-key'></i>
+              </div>
+            </div>
+            <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br/>
+      <div class='form-row align-items-center'>
+        <div class='col'>
+          <%= button_tag(type: 'submit', class: 'btn btn-outline-primary btn-sm btn-block') do %>
+            <strong>
+              <i class='fas fa-sign-in-alt'></i>&nbsp;&nbsp;ACCEDI
+            </strong>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <br/>
+    <div class='form-row align-items-center'>
+      <div class='col'>
+        <%= image_tag('footer_logo.svg', class: 'img-fluid') %>
+      </div>
+    </div>
+  </div>
+</div>

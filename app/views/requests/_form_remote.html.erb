@@ -1,0 +1,58 @@
+<div class='modal fade' id='edit_request'>
+  <%= form_for @request, remote: true do |form| %>
+    <div class='modal-dialog modal-lg'>
+      <div class='modal-content'>
+        <div class='modal-header'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col'>
+                <h5 class='text-danger'>
+                  <i class='fas fa-file-contract'></i>
+                  &nbsp;&nbsp;
+                  Conferma la presa in carico ed il processamento della Richiesta Pratica N°: 
+                </h5>
+                <h5  class='text-primary'>
+                  <%= @request.name %> del <%= l(@request.date) %>
+                </h5  >
+                <hr class='hr-primary'/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='modal-body'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col'>
+                <div class="form-group form-check">
+                  <%= form.check_box :processed, class: "form-check-input" %>
+                  <label class="form-check-label">Presa in Carico e Processata</label>
+                  <br/>
+                  <br/>
+                  <%= button_tag(type: 'submit', class: 'btn btn-success', title: 'Conferma', 'data-toggle' => 'tooltip', 'data-placement' => 'top') do %>
+                    <i class='fas fa-check-square'></i>&nbsp;Conferma
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='modal-footer'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col'>
+                <hr class='hr-primary'/>
+                <span class='float-right'>
+                  <div class='form-group'>
+                    <button type='button' class='btn btn-danger' data-dismiss='modal'>
+                      <%= icon('fas', 'times') %>&nbsp;Chiudi
+                    </button>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
