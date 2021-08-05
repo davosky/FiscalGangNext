@@ -16,6 +16,10 @@ module ApplicationHelper
   end
 
   def processed?(request)
-    'bg-processed' if request.processed == true
+    if request.processed == true
+      'bg-processed'
+    elsif request.unprocessable == true
+      'bg-unprocessed'
+    end
   end
 end

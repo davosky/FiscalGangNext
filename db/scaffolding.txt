@@ -23,3 +23,5 @@ rails g migration AddColumnToRequest processed:boolean updater
 
 rails g migration AddPhoneToOperator phone
 
+rails g migration AddUnprocessableToRequest unprocessable:boolean unprocessable_reason:text
+

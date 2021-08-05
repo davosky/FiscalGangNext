@@ -25,10 +25,21 @@
               <div class='col'>
                 <div class="form-group form-check">
                   <%= form.check_box :processed, class: "form-check-input" %>
-                  <label class="form-check-label">Presa in Carico e Processata</label>
+                  <label class="form-check-label text-success">Presa in Carico e Processata</label>
+                  <br/>
+                  <hr/>
+                  <br/>
+                  <%= form.check_box :unprocessable, class: "form-check-input" %>
+                  <label class="form-check-label text-danger">Non processabile</label>
                   <br/>
                   <br/>
-                  <%= button_tag(type: 'submit', class: 'btn btn-success', title: 'Conferma', 'data-toggle' => 'tooltip', 'data-placement' => 'top') do %>
+                  <label class="form-check-label text-danger">Motivo del mancato processamento</label>
+                  <br/>
+                  <%= form.text_area :unprocessable_reason, class: "form-input" %>
+                  <br/>
+                  <hr/>
+                  <br/>
+                  <%= button_tag(type: 'submit', class: 'btn btn-secondary', title: 'Conferma', 'data-toggle' => 'tooltip', 'data-placement' => 'top') do %>
                     <i class='fas fa-check-square'></i>&nbsp;Conferma
                   <% end %>
                 </div>

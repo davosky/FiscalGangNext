@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_03_055747) do
+ActiveRecord::Schema.define(version: 2021_08_05_071206) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 2021_08_03_055747) do
     t.datetime "updated_at", null: false
     t.boolean "processed", default: false
     t.string "updater"
+    t.boolean "unprocessable", default: false
+    t.text "unprocessable_reason"
     t.index ["category_id"], name: "index_requests_on_category_id"
     t.index ["operator_id"], name: "index_requests_on_operator_id"
     t.index ["practice_id"], name: "index_requests_on_practice_id"

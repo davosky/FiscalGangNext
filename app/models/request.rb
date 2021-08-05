@@ -15,7 +15,7 @@ class Request < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :mobile, presence: true
-  # validates :email, presence: true, :unless => :mobile?
+  # validates :unprocessable_reason, presence: true, :unless => :unprocessable?
   validates :category_id, presence: true, if: :is_subscriber?
 
   def is_subscriber?
