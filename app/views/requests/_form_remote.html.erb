@@ -23,19 +23,23 @@
           <div class='container'>
             <div class='row'>
               <div class='col'>
-                <div class="form-group form-check">
-                  <%= form.check_box :processed, class: "form-check-input" %>
-                  <label class="form-check-label text-success">Presa in Carico e Processata</label>
+                <div class='form-group form-check'>
+                  <div id='processed'>
+                    <%= form.check_box :processed, class: 'form-check-input', id: 'chkprocessed', onclick: 'ShowHideDivUnprocessable(this)' %>
+                    <label class='form-check-label text-success'>Presa in Carico e Processata</label>
+                  </div>
                   <br/>
                   <hr/>
                   <br/>
-                  <%= form.check_box :unprocessable, class: "form-check-input" %>
-                  <label class="form-check-label text-danger">Non processabile</label>
-                  <br/>
-                  <br/>
-                  <label class="form-check-label text-danger">Motivo del mancato processamento</label>
-                  <br/>
-                  <%= form.text_area :unprocessable_reason, class: "form-input" %>
+                  <div id='unprocessable' style='display:block'>
+                    <%= form.check_box :unprocessable, class: 'form-check-input', id: 'chkunprocessable', onclick: 'ShowHideDivProcessed(this)' %>
+                    <label class='form-check-label text-danger'>Non processabile</label>
+                    <br/>
+                    <br/>
+                    <label class='form-check-label text-danger'>Motivo del mancato processamento</label>
+                    <br/>
+                    <%= form.text_area :unprocessable_reason, class: 'form-input' %>
+                  </div>
                   <br/>
                   <hr/>
                   <br/>
@@ -67,3 +71,14 @@
     </div>
   <% end %>
 </div>
+<script type="text/javascript">
+  function ShowHideDivUnprocessable(chkprocessed) {
+      var unprocessable = document.getElementById("unprocessable");
+      unprocessable.style.display = chkprocessed.checked ? "none" : "block";
+  }
+  
+  function ShowHideDivProcessed(chkunprocessable) {
+      var unprocessable = document.getElementById("processed");
+      processed.style.display = chkunprocessable.checked ? "none" : "block";
+  }
+</script>
