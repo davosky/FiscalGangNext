@@ -115,28 +115,43 @@
               <hr class='hr-primary'/>
               <% if @request.processed == true %>
                 <span class='float-left'>
-                  <small>
                     Richiesta presa in carico e processata da:
-                    &nbsp;&nbsp;
+                    <br/>
                     <%= @request.updater %>
                     &nbsp;&nbsp;
                     in data:
                     &nbsp;&nbsp;
                     <%= l(@request.updated_at, format: '%A %d %B %Y') %>
-                  </small>
                 </span>
               <% end %>
-              <span class='float-right'>
-                <div class='form-group'>
-                  <button type='button' class='btn btn-primary' data-dismiss='modal'>
-                    <%= icon('fas', 'times') %>&nbsp;Chiudi
-                  </button>
+              <% if @request.unprocessable == true %>
+                <span class='float-left text-danger'>
+                  Richiesta non processabile per il seguente motivo:
+                  <br/>
+                  <%= @request.unprocessable_reason %>
+                    <br/>
+                      <small class='text-secondary'>
+                        Richiesta Pratica controllata da:
+                        &nbsp;&nbsp;
+                        <%= @request.updater %>
+                        &nbsp;&nbsp;
+                        in data:
+                        &nbsp;&nbsp;
+                        <%= l(@request.updated_at, format: '%A %d %B %Y') %>
+                      </small>
+                    </span>
+                  <% end %>
+                  <span class='float-right'>
+                    <div class='form-group'>
+                      <button type='button' class='btn btn-primary' data-dismiss='modal'>
+                        <%= icon('fas', 'times') %>&nbsp;Chiudi
+                      </button>
+                    </div>
+                  </span>
                 </div>
-              </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>

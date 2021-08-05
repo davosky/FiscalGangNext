@@ -28,7 +28,7 @@
               <i class='<%= subscriber?(request) %>'></i>
               &nbsp;<strong class='text-success'>NON ISCRITTO</strong>
             <% end %>
-            <% if request.processed == false %>
+            <% unless request.processed? || request.unprocessable? %>
               &nbsp;&nbsp;|
               &nbsp;&nbsp;
               <%= link_to edit_request_path(request), class:'btn btn-sm btn-primary', title: 'Prendi in Carico', remote: true do %>
@@ -45,6 +45,14 @@
     <div class='col' >
       <div class='card mb-3 <%= processed?(request) %>'>
         <div class='card-body'>
+          <% unless request.note == nil || request.note.blank? %>
+            <%= link_to request, class: 'btn btn-sm btn-primary', title: 'Dettaglio con Note', remote: true do %>
+              <%= request.name %>&nbsp;&nbsp;<i class='fas fa-clipboard text-warning'></i>
+            <% end %>
+          <% else %>
+            <%= link_to request.name, request, class: 'btn btn-sm btn-primary', title: 'Dettaglio', remote: true %>
+          <% end %>
+          &nbsp;&nbsp;
           <i class="far fa-calendar-alt text-tertiary"></i>&nbsp;&nbsp;<%= l(request.date) %>
           &nbsp;&nbsp;
           <i class="far fa-user text-tertiary"></i>&nbsp;&nbsp;<%= "#{request.last_name} #{request.first_name}" %>
@@ -62,7 +70,7 @@
               <i class='<%= subscriber?(request) %>'></i>
               &nbsp;<strong class='text-success'>NON ISCRITTO</strong>
             <% end %>
-            <% if request.processed == false %>
+            <% unless request.processed? || request.unprocessable? %>
               &nbsp;&nbsp;|
               &nbsp;&nbsp;
               <%= link_to request, method: :delete, data: { confirm: 'Sei sicura/o di voler eliminare il record Corrente?' }, title: 'Elimina la Richiesta Corrente', rel: 'tooltip' do %>

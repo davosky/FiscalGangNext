@@ -12,14 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2021_08_05_071206) do
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name"
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "operators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "operators", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "username", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -40,14 +40,14 @@ ActiveRecord::Schema.define(version: 2021_08_05_071206) do
     t.index ["username"], name: "index_operators_on_username", unique: true
   end
 
-  create_table "practices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "practices", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name"
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "name"
     t.date "date"
     t.bigint "practice_id"

@@ -8,6 +8,7 @@ class Request < ApplicationRecord
     last_name = Request.maximum(:name)
     self.name = last_name.to_i + 1
   end
+
   def set_date
     self.date = Date.today
   end
@@ -15,10 +16,14 @@ class Request < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :mobile, presence: true
-  # validates :unprocessable_reason, presence: true, :unless => :unprocessable?
-  validates :category_id, presence: true, if: :is_subscriber?
+  validates :unprocessable_reason, presence: true, if: :unprocessable?
+  validates :category_id, presence: true, if: :subscriber?
 
-  def is_subscriber?
-    self.subscriber
+  def unprocessable?
+    unprocessable
+  end
+
+  def subscriber?
+    subscriber
   end
 end
