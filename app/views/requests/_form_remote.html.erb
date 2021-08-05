@@ -36,9 +36,15 @@
                     <label class='form-check-label text-danger'>Non processabile</label>
                     <br/>
                     <br/>
-                    <label class='form-check-label text-danger'>Motivo del mancato processamento</label>
-                    <br/>
-                    <%= form.text_area :unprocessable_reason, class: 'form-input' %>
+                    <div id='unprocessablereason' style='display:none'>
+                      <label class='form-check-label text-danger'>Motivo del mancato processamento</label>
+                      <br/>
+                      <%= form.text_area :unprocessable_reason, class: 'form-input' %>
+                      <br/>
+                      <small class='text-danger'>
+                        ATTENZIONE! è obbligatorio inserire il motivo del mancato processamento
+                      </small>
+                    </div>
                   </div>
                   <br/>
                   <hr/>
@@ -80,5 +86,7 @@
   function ShowHideDivProcessed(chkunprocessable) {
       var unprocessable = document.getElementById("processed");
       processed.style.display = chkunprocessable.checked ? "none" : "block";
+      var unprocessablereason = document.getElementById("unprocessablereason");
+      unprocessablereason.style.display = chkunprocessable.checked ? "block" : "none";
   }
 </script>
