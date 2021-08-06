@@ -1,59 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @request.name %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @request.date %>
-</p>
-
-<p>
-  <strong>Practice:</strong>
-  <%= @request.practice %>
-</p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @request.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @request.last_name %>
-</p>
-
-<p>
-  <strong>Mobile:</strong>
-  <%= @request.mobile %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @request.email %>
-</p>
-
-<p>
-  <strong>Subscriber:</strong>
-  <%= @request.subscriber %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @request.category %>
-</p>
-
-<p>
-  <strong>Note:</strong>
-  <%= @request.note %>
-</p>
-
-<p>
-  <strong>Operator:</strong>
-  <%= @request.operator %>
-</p>
-
-<%= link_to 'Edit', edit_request_path(@request) %> |
-<%= link_to 'Back', requests_path %>
+<h5 class='text-primary'>
+  <i class='fas fa-file-contract'></i>
+  &nbsp;&nbsp;
+  Richiesta Pratica n° <%= @request.name %> del <%= l(@request.date) %>
+  <br/>
+  <small>
+    (&nbsp;&nbsp;Creata da : 
+    <%= "#{@request.operator.name} #{@request.operator.last_name} - #{@request.operator.category} - #{@request.operator.phone}" %>&nbsp;&nbsp;)
+  </small>
+  <span class='float-right'>
+    <%= link_to 'Ritorna alla Lista', requests_path %>
+  </span>
+</h5>
+<br/>
+<hr class='hr-primary'/>

@@ -1,4 +1,4 @@
-<%# Link to the "Previous" page
+<%# Link to the 'Previous' page
   - available local variables
     url:           url to the previous page
     current_page:  a page object for the currently displayed page
@@ -6,7 +6,7 @@
     per_page:      number of items to fetch per page
     remote:        data-remote
 -%>
-<span class="prev">
+<span class='prev'>
   <% unless current_page.first? %>
     <%= link_to url, rel: 'prev', remote: remote, class: 'page-link' do %>
       <i class='fas fa-chevron-left'></i>

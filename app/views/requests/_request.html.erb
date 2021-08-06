@@ -11,15 +11,15 @@
             <%= link_to request.name, request, class: 'btn btn-sm btn-primary', title: 'Dettaglio', remote: true %>
           <% end %>
           &nbsp;&nbsp;
-          <i class="far fa-calendar-alt text-tertiary"></i>&nbsp;&nbsp;<%= l(request.date) %>
+          <i class='far fa-calendar-alt text-tertiary'></i>&nbsp;&nbsp;<%= l(request.date) %>
           &nbsp;&nbsp;
-          <i class="far fa-user text-tertiary"></i>&nbsp;&nbsp;<%= "#{request.last_name} #{request.first_name}" %>
+          <i class='far fa-user text-tertiary'></i>&nbsp;&nbsp;<%= "#{request.last_name} #{request.first_name}" %>
           &nbsp;&nbsp;
-          <i class="fas fa-mobile-alt text-tertiary"></i>&nbsp;&nbsp;<%= request.mobile %>
+          <i class='fas fa-mobile-alt text-tertiary'></i>&nbsp;&nbsp;<%= request.mobile %>
           &nbsp;&nbsp;
-          <i class="far fa-envelope text-tertiary"></i>&nbsp;&nbsp;<%= mail_to(request.email) %>
+          <i class='far fa-envelope text-tertiary'></i>&nbsp;&nbsp;<%= mail_to(request.email) %>
           &nbsp;&nbsp;|&nbsp;&nbsp;
-          <i class="fas fa-file-contract text-tertiary"></i><strong>&nbsp;&nbsp;<%= request.practice.name %></strong>
+          <i class='fas fa-file-contract text-tertiary'></i><strong>&nbsp;&nbsp;<%= request.practice.name %></strong>
           <span class='float-right'>
             <% if request.category_id != nil %>
               <i class='<%= subscriber?(request) %>'></i>
@@ -32,7 +32,7 @@
               &nbsp;&nbsp;|
               &nbsp;&nbsp;
               <%= link_to edit_request_path(request), class:'btn btn-sm btn-primary', title: 'Prendi in Carico', remote: true do %>
-                <i class="fas fa-tools"></i>
+                <i class='fas fa-tools'></i>
               <% end %>
             <% end %>
           </span>
@@ -53,15 +53,15 @@
             <%= link_to request.name, request, class: 'btn btn-sm btn-primary', title: 'Dettaglio', remote: true %>
           <% end %>
           &nbsp;&nbsp;
-          <i class="far fa-calendar-alt text-tertiary"></i>&nbsp;&nbsp;<%= l(request.date) %>
+          <i class='far fa-calendar-alt text-tertiary'></i>&nbsp;&nbsp;<%= l(request.date) %>
           &nbsp;&nbsp;
-          <i class="far fa-user text-tertiary"></i>&nbsp;&nbsp;<%= "#{request.last_name} #{request.first_name}" %>
+          <i class='far fa-user text-tertiary'></i>&nbsp;&nbsp;<%= "#{request.last_name} #{request.first_name}" %>
           &nbsp;&nbsp;
-          <i class="fas fa-mobile-alt text-tertiary"></i>&nbsp;&nbsp;<%= request.mobile %>
+          <i class='fas fa-mobile-alt text-tertiary'></i>&nbsp;&nbsp;<%= request.mobile %>
           &nbsp;&nbsp;
-          <i class="far fa-envelope text-tertiary"></i>&nbsp;&nbsp;<%= mail_to(request.email) %>
+          <i class='far fa-envelope text-tertiary'></i>&nbsp;&nbsp;<%= mail_to(request.email) %>
           &nbsp;&nbsp;|&nbsp;&nbsp;
-          <i class="fas fa-file-contract text-tertiary"></i><strong>&nbsp;&nbsp;<%= request.practice.name %></strong>
+          <i class='fas fa-file-contract text-tertiary'></i><strong>&nbsp;&nbsp;<%= request.practice.name %></strong>
           <span class='float-right'>
             <% if request.category_id != nil %>
               <i class='<%= subscriber?(request) %>'></i>

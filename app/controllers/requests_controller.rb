@@ -54,8 +54,10 @@ class RequestsController < ApplicationController
   end
 
   def request_params
-    params.require(:request).permit(:name, :date, :practice_id, :first_name, :last_name, :mobile, :email,
-                                    :subscriber, :category_id, :note, :operator_id, :processed, :updater,
-                                    :unprocessable, :unprocessable_reason)
+    params.require(:request).permit(:name, :date, :practice_id, :first_name,
+                                    :last_name, :mobile, :email,
+                                    :subscriber, :category_id, :note, :operator_id,
+                                    :processed, :updater, :unprocessable,
+                                    :unprocessable_reason)
   end
 end

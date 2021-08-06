@@ -3,8 +3,8 @@
     <div class='col'>
       <%= form_with(model: request, local: true) do |form| %>
         <% if request.errors.any? %>
-          <div id="error_explanation">
-            <h2 class='text-warning'><%= pluralize(request.errors.count, "error") %> Non posso salvare la Richiesta Pratica:</h2>
+          <div id='error_explanation'>
+            <h2 class='text-warning'><%= pluralize(request.errors.count, 'error') %> Non posso salvare la Richiesta Pratica:</h2>
             <ul>
               <% request.errors.full_messages.each do |message| %>
                 <li class='text-danger' ><%= message %></li>
@@ -44,7 +44,7 @@
           <div class='col'>
             <div class='input-group'>
               <div class='input-group-prepend'>
-                <div class='input-group-text input-group-text-form'>
+                <div class='input-group-text input-group-text-form text-danger'>
                   <i class='fas fa-mobile-alt'></i>
                   &nbsp;
                   Telefono: 
@@ -68,14 +68,18 @@
             </div>
           </div>
         </div>
-        <div class="form-group align-items-center form-check">
+        <hr/>
+        <div class='form-group align-items-center'>
           <div class='col'>
-            <%= form.check_box :subscriber, class: "form-check-input" %>
-            <label class="form-check-label">Iscritto/a</label>
-            &nbsp;&nbsp;
+            <div class="custom-control custom-switch">
+              <%= form.check_box :subscriber, type: 'checkbox', class: 'custom-control-input', id: 'customSwitch1', onclick: 'ShowHideDivSubscriberCategoryTwo(this)' %>
+              <label class='custom-control-label' for='customSwitch1'>Iscritto/a
+                <small class='text-secondary'>( se abilitato &egrave; obbligatorio l'inserimento della categoria )</small>
+              </label>
+            </div>
           </div>
         </div>
-        <div class='form-group align-items-center'>
+        <div class='form-group align-items-center' id='subscribercategory' style='display:none'>
           <div class='col'>
             <div class='input-group'>
               <div class='input-group-prepend'>
@@ -134,3 +138,9 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  function ShowHideDivSubscriberCategoryTwo(customSwitch1) {
+      var subscriber = document.getElementById("subscribercategory");
+      subscribercategory.style.display = customSwitch1.checked ? "block" : "none";
+  }
+</script>

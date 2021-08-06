@@ -7,15 +7,22 @@
       Modifica Password
     </h3>
     <hr/>
+    <strong class='text-danger'>
+      ATTENZIONE! la password deve avere una lunghezza di almeno 10 posizioni
+      e contenere lettere maiuscole e minuscole, numeri e caratteri speciali
+      per essere valida.
+    </strong>
+    <br/>
+    <br/>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <div class='form-row align-items-center'>
         <div class='col'>
           <span class='text-info'>
-            <%= f.label :password %>
+            Inserisci la Nuova Password
           </span>
           &nbsp;
           <small>
-            (leave blank if you don't want to change it)
+            ( lascia il campo vuoto se non vuoi modificarla )
           </small>
           <div class='input-group'>
             <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
@@ -30,7 +37,7 @@
       <div class='form-row align-items-center'>
         <div class='col'>
           <span class='text-info'>
-            <%= f.label :password_confirmation %>
+            Conferma la Nuova Password
           </span>
           &nbsp;
           <div class='input-group'>
@@ -42,11 +49,11 @@
       <div class='form-row align-items-center'>
         <div class='col'>
           <span class='text-info'>
-            <%= f.label :password %>
+            Inserisci la Password Corrente
           </span>
           &nbsp;
           <small>
-            (we need your current password to confirm your changes)
+            ( devi inserire la password corrente per confermere il cambio )
           </small>
           <div class='input-group'>
             <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
