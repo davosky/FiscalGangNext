@@ -3,8 +3,48 @@
   &nbsp;&nbsp;
   Richieste Pratica
 </h4>
+&nbsp;&nbsp;
+<div class='float-right'>
+  <!-- SEARCH -->
+  <%= search_form_for @q, class: 'form-inline' do |form| %>
+    <div class='form-row align-items-center'>
+      <div class='col'>
+        <div class='input-group'>
+          <div class='input-group-prepend'>
+            <div class='input-group-text input-group-text-form'>
+              <i class='fas fa-user'></i>
+              &nbsp;
+              <i class='fas fa-mobile-alt'></i>
+            </div>
+          </div>
+          <%= form.search_field :last_name_or_mobile_cont, placeholder: 'Cognome o Telefono contiene', class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    &nbsp;&nbsp;
+    <div class='form-row align-items-center'>
+      <div class='col'>
+        <div class='input-group'>
+          <div class='input-group-prepend'>
+            <div class='input-group-text input-group-text-form'>
+              <i class='fas fa-file-contract'></i>
+            </div>
+          </div>
+          <%= form.search_field :practice_name_cont, placeholder: 'Tipo Pratica contiene', class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    &nbsp;&nbsp;
+    <%= button_tag(type: 'submit', class: 'btn btn-outline-primary btn-sm') do %>
+      <strong>
+        <i class='fas fa-search'></i>&nbsp;&nbsp;Cerca
+      </strong>
+    <% end %>
+  <% end %>
+  <!-- /SEARCH -->
+</div class='float-right'>
+<br>
+<br>
 <hr class='hr-primary'>
-<br/>
 <%= render @requests %>
-<hr class='hr-primary'>
 <%= paginate @requests %>

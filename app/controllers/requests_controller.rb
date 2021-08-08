@@ -3,11 +3,14 @@ class RequestsController < ApplicationController
 
   def index
     @operator = current_operator
-    @requests = if @operator.category == 'CESI' || @operator.category == 'CAAF'
-                  Request.all.order('created_at DESC').page(params[:page])
-                else
-                  @operator.requests.order('created_at DESC').page(params[:page])
-                end
+    @q = Request.ransack(params[:q])
+    if @operator.category == 'CESI' || @operator.category == 'CAAF'
+      # Request.all.order('created_at DESC').page(params[:page])
+      @requests = @q.result(distinct: true).order('created_at DESC').page(params[:page])
+    else
+      # @operator.requests.order('created_at DESC').page(params[:page])
+      @requests = @q.result(distinct: true).order('created_at DESC').where(operator_id: current_operator.id).page(params[:page])
+    end
   end
 
   def show; end
