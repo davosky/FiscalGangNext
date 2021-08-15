@@ -4,22 +4,22 @@ class RequestsController < ApplicationController
   def index
     @operator = current_operator
     @q = Request.ransack(params[:q])
-    if @operator.category == 'CESI' || @operator.category == 'CAAF'
-      # Request.all.order('created_at DESC').page(params[:page])
-      @requests = @q.result(distinct: true).order('created_at DESC').page(params[:page])
+    @requests = if @operator.category == "CESI" || @operator.category == "CAAF"
+      @q.result(distinct: true).order("created_at DESC").page(params[:page])
     else
-      # @operator.requests.order('created_at DESC').page(params[:page])
-      @requests = @q.result(distinct: true).order('created_at DESC').where(operator_id: current_operator.id).page(params[:page])
+      @q.result(distinct: true).order("created_at DESC").where(operator_id: current_operator.id).page(params[:page])
     end
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @request = Request.new
   end
 
-  def edit; end
+  def edit
+  end
 
   def create
     @operator = current_operator
@@ -45,7 +45,7 @@ class RequestsController < ApplicationController
   def destroy
     @request.destroy
     respond_to do |format|
-      format.html { redirect_to requests_url, notice: 'Request was successfully destroyed.' }
+      format.html { redirect_to requests_url, notice: "Request was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -57,10 +57,15 @@ class RequestsController < ApplicationController
   end
 
   def request_params
-    params.require(:request).permit(:name, :date, :practice_id, :first_name,
-                                    :last_name, :mobile, :email,
-                                    :subscriber, :category_id, :note, :operator_id,
-                                    :processed, :updater, :unprocessable,
-                                    :unprocessable_reason)
+    params.require(:request).permit(
+      :name, :date, :practice_id, :first_name,
+      :last_name, :mobile, :email, :subscriber,
+      :category_id, :note, :operator_id,
+      :processed, :updater, :unprocessable,
+      :unprocessable_reason, :first_call,
+      :first_call_date, :second_call,
+      :second_call_date, :third_call,
+      :third_call_date
+    )
   end
 end

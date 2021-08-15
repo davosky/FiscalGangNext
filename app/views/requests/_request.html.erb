@@ -1,8 +1,8 @@
 <% if current_operator.category == 'CESI' || current_operator.category == 'CAAF' %>
   <div class='row' id='<%= request.id %>'>
     <div class='col' >
-      <div class='card mb-3 <%= processed?(request) %>'>
-        <div class='card-body'>
+      <div class='card mb-2 <%= processed?(request) %>'>
+        <div class='card-body p-2'>
           <% unless request.note == nil || request.note.blank? %>
             <%= link_to request, class: 'btn btn-sm btn-primary', title: 'Dettaglio con Note', remote: true do %>
               <%= request.name %>&nbsp;&nbsp;<i class='fas fa-clipboard text-warning'></i>
@@ -13,7 +13,10 @@
           &nbsp;&nbsp;
           <i class='far fa-calendar-alt text-tertiary'></i>&nbsp;&nbsp;<%= l(request.date) %>
           &nbsp;&nbsp;
-          <i class='far fa-user text-tertiary'></i>&nbsp;&nbsp;<%= "#{request.last_name} #{request.first_name}" %>
+          <i class='far fa-user text-tertiary'></i>&nbsp;&nbsp;
+          <strong>
+            <%= "#{request.last_name} #{request.first_name}" %>
+          </strong>
           &nbsp;&nbsp;
           <i class='fas fa-mobile-alt text-tertiary'></i>&nbsp;&nbsp;<%= request.mobile %>
           &nbsp;&nbsp;
@@ -21,6 +24,18 @@
           &nbsp;&nbsp;|&nbsp;&nbsp;
           <i class='fas fa-file-contract text-tertiary'></i><strong>&nbsp;&nbsp;<%= request.practice.name %></strong>
           <span class='float-right'>
+            <% if request.first_call == true %>
+              <i class='fas fas fa-phone-alt text-primary'></i>
+              &nbsp;&nbsp;
+            <% end %>
+            <% if request.second_call == true %>
+              <i class='fas fas fa-phone-alt text-primary'></i>
+              &nbsp;&nbsp;
+            <% end %>
+            <% if request.third_call == true %>
+              <i class='fas fas fa-phone-alt text-primary'></i>
+              &nbsp;&nbsp;
+            <% end %>
             <% if request.category_id != nil %>
               <i class='<%= subscriber?(request) %>'></i>
               &nbsp;<strong class='text-danger'><%= request.category.name %></strong>
@@ -43,8 +58,8 @@
 <% else %>
   <div class='row' id='<%= request.id %>'>
     <div class='col' >
-      <div class='card mb-3 <%= processed?(request) %>'>
-        <div class='card-body'>
+      <div class='card mb-2 <%= processed?(request) %>'>
+        <div class='card-body p-2'>
           <% unless request.note == nil || request.note.blank? %>
             <%= link_to request, class: 'btn btn-sm btn-primary', title: 'Dettaglio con Note', remote: true do %>
               <%= request.name %>&nbsp;&nbsp;<i class='fas fa-clipboard text-warning'></i>
@@ -63,6 +78,18 @@
           &nbsp;&nbsp;|&nbsp;&nbsp;
           <i class='fas fa-file-contract text-tertiary'></i><strong>&nbsp;&nbsp;<%= request.practice.name %></strong>
           <span class='float-right'>
+            <% if request.first_call == true %>
+              <i class='fas fas fa-phone-alt text-primary'></i>
+              &nbsp;&nbsp;
+            <% end %>
+            <% if request.second_call == true %>
+              <i class='fas fas fa-phone-alt text-primary'></i>
+              &nbsp;&nbsp;
+            <% end %>
+            <% if request.third_call == true %>
+              <i class='fas fas fa-phone-alt text-primary'></i>
+              &nbsp;&nbsp;
+            <% end %>
             <% if request.category_id != nil %>
               <i class='<%= subscriber?(request) %>'></i>
               &nbsp;<strong class='text-danger'><%= request.category.name %></strong>
@@ -70,7 +97,7 @@
               <i class='<%= subscriber?(request) %>'></i>
               &nbsp;<strong class='text-success'>NON ISCRITTO</strong>
             <% end %>
-            <% unless request.processed? || request.unprocessable? %>
+            <% unless request.processed? || request.unprocessable? || request.updater? %>
               &nbsp;&nbsp;|
               &nbsp;&nbsp;
               <%= link_to request, method: :delete, data: { confirm: 'Sei sicura/o di voler eliminare il record Corrente?' }, title: 'Elimina la Richiesta Corrente', rel: 'tooltip' do %>

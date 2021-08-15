@@ -7,11 +7,13 @@
             <div class='col-12'>
               <h5 class='modal-title text-primary'>
                 <i class='fas fa-file-contract'></i>
-                &nbsp;&nbsp;
-                Richiesta Pratica n° <%= @request.name %> del <%= l(@request.date) %>
+                &nbsp;&nbsp; Richiesta Pratica n°
+                <%= @request.name %>
+                del
+                <%= l(@request.date) %>
                 <br/>
                 <small>
-                  (&nbsp;&nbsp;Creata da : 
+                  (&nbsp;&nbsp;Creata da :
                   <%= "#{@request.operator.name} #{@request.operator.last_name} - #{@request.operator.category} - #{@request.operator.phone}" %>&nbsp;&nbsp;)
                 </small>
               </h5>
@@ -102,7 +104,37 @@
                 </strong>
               </span>
               <br/>
-              <%= @request.note %>
+              <span class='text-primary'>
+                <%= @request.note %>
+              </span>
+            <% end %>
+            <br/>
+            <br/>
+            Chiamate:
+            <hr/>
+            <% if @request.first_call == true %>
+              <i class='fas fas fa-phone-alt'></i>
+              &nbsp;&nbsp; Prima Chiamata in data &nbsp;&nbsp;
+              <%= l(@request.first_call_date, format: '%A %d %B %Y') %>
+              &nbsp;&nbsp; effettuata dall'operatore &nbsp;&nbsp;
+              <%= @request.updater %>
+              <br/>
+            <% end %>
+            <% if @request.second_call == true %>
+              <i class='fas fas fa-phone-alt'></i>
+              &nbsp;&nbsp; Seconda Chiamata in data &nbsp;&nbsp;
+              <%= l(@request.second_call_date, format: '%A %d %B %Y') %>
+              &nbsp;&nbsp; effettuata dall'operatore &nbsp;&nbsp;
+              <%= @request.updater %>
+              <br/>
+            <% end %>
+            <% if @request.third_call == true %>
+              <i class='fas fas fa-phone-alt'></i>
+              &nbsp;&nbsp; terza Chiamata in data &nbsp;&nbsp;
+              <%= l(@request.third_call_date, format: '%A %d %B %Y') %>
+              &nbsp;&nbsp; effettuata dall'operatore &nbsp;&nbsp;
+              <%= @request.updater %>
+              <br/>
             <% end %>
           </div>
         </div>
@@ -114,13 +146,11 @@
               <hr class='hr-primary'/>
               <% if @request.processed == true %>
                 <span class='float-left text-success'>
-                    Richiesta presa in carico e processata da:
-                    <br/>
-                    <%= @request.updater %>
-                    &nbsp;&nbsp;
-                    in data:
-                    &nbsp;&nbsp;
-                    <%= l(@request.updated_at, format: '%A %d %B %Y') %>
+                  Richiesta presa in carico e processata da:
+                  <br/>
+                  <%= @request.updater %>
+                  &nbsp;&nbsp; in data: &nbsp;&nbsp;
+                  <%= l(@request.updated_at, format: '%A %d %B %Y') %>
                 </span>
               <% end %>
               <% if @request.unprocessable == true %>
@@ -128,29 +158,26 @@
                   Richiesta non processabile per il seguente motivo:
                   <br/>
                   <%= @request.unprocessable_reason %>
-                    <br/>
-                      <small class='text-secondary'>
-                        Richiesta Pratica controllata da:
-                        &nbsp;&nbsp;
-                        <%= @request.updater %>
-                        &nbsp;&nbsp;
-                        in data:
-                        &nbsp;&nbsp;
-                        <%= l(@request.updated_at, format: '%A %d %B %Y') %>
-                      </small>
-                    </span>
-                  <% end %>
-                  <span class='float-right'>
-                    <div class='form-group'>
-                      <button type='button' class='btn btn-primary' data-dismiss='modal'>
-                        <%= icon('fas', 'times') %>&nbsp;Chiudi
-                      </button>
-                    </div>
-                  </span>
+                  <br/>
+                  <small class='text-danger'>
+                    Richiesta Pratica controllata da: &nbsp;&nbsp;
+                    <%= @request.updater %>
+                    &nbsp;&nbsp; in data: &nbsp;&nbsp;
+                    <%= l(@request.updated_at, format: '%A %d %B %Y') %>
+                  </small>
+                </span>
+              <% end %>
+              <span class='float-right'>
+                <div class='form-group'>
+                  <button type='button' class='btn btn-primary' data-dismiss='modal'>
+                    <%= icon('fas', 'times') %>&nbsp;Chiudi
+                  </button>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>

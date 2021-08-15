@@ -42,6 +42,9 @@
               <%= icon('fas', 'user-cog') %>&nbsp;&nbsp;Amministrazione
             <% end %>
           <% end %>
+          <%= link_to dash_credits_path, class: 'dropdown-item'  do %>
+            <%= icon('fas', 'user-edit') %>&nbsp;&nbsp;Crediti
+          <% end %>
           <div class='dropdown-divider'></div>
           <%= link_to destroy_operator_session_path, method: :delete, class: 'dropdown-item' do %>
             <%= icon('fas', 'door-open') %>&nbsp;&nbsp;Esci

@@ -24,6 +24,48 @@
             <div class='row'>
               <div class='col'>
                 <div class='form-group form-check'>
+                  <div id='call'>
+                    <% unless @request.first_call == true %>
+                      <%= form.check_box :first_call, class: 'form-check-input', id: 'chkfirstcall' %>
+                    <% else %>
+                      <%= form.check_box :first_call, class: 'form-check-input', id: 'chkfirstcall', disabled: true %>
+                    <% end %>
+                    <label class='form-check-label text-primary'>
+                      &nbsp;
+                      <i class='fas fas fa-phone-volume'></i>
+                      &nbsp;
+                      Prima Chiamata
+                    </label>
+                    <br/>
+                    <br/>
+                    <% unless @request.second_call == true %>
+                      <%= form.check_box :second_call, class: 'form-check-input', id: 'chksecondcall' %>
+                    <% else %>
+                      <%= form.check_box :second_call, class: 'form-check-input', id: 'chksecondcall', disabled: true %>
+                    <% end %>
+                    <label class='form-check-label text-primary'>
+                      &nbsp;
+                      <i class='fas fas fa-phone-volume'></i>
+                      &nbsp;
+                      Seconda Chiamata
+                    </label>
+                    <br/>
+                    <br/>
+                    <% unless @request.third_call == true %>
+                      <%= form.check_box :third_call, class: 'form-check-input', id: 'chkthirdcall' %>
+                    <% else %>
+                      <%= form.check_box :third_call, class: 'form-check-input', id: 'chkthirdcall', disabled: true %>
+                    <% end %>
+                    <label class='form-check-label text-primary'>
+                      &nbsp;
+                      <i class='fas fas fa-phone-volume'></i>
+                      &nbsp;
+                      Terza Chiamata
+                    </label>
+                  </div>
+                  <br/>
+                  <hr/>
+                  <br/>
                   <div id='processed'>
                     <%= form.check_box :processed, class: 'form-check-input', id: 'chkprocessed', onclick: 'ShowHideDivUnprocessable(this)' %>
                     <label class='form-check-label text-success'>Presa in Carico e Processata</label>
