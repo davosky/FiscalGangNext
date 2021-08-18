@@ -55,6 +55,7 @@ it:
         updater: Processata da
         operator: Operatore
         operator_id: Operatore
+        updater: Aggiornato da
         created_at: Creato il
         updated_at: Aggiornato il
     errors:

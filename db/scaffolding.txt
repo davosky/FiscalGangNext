@@ -26,3 +26,5 @@ rails g migration AddPhoneToOperator phone
 rails g migration AddUnprocessableToRequest unprocessable:boolean unprocessable_reason:text
 
 rails g migration AddCallToRequest first_call:boolean second_call:boolean third_call:boolean first_call_date:date second_call_date:date third_call_date:date
+
+rails g migration AddCallUpdaterToRequest first_call_updater second_call_updater third_call_updater

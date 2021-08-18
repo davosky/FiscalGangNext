@@ -65,7 +65,8 @@ class RequestsController < ApplicationController
       :unprocessable_reason, :first_call,
       :first_call_date, :second_call,
       :second_call_date, :third_call,
-      :third_call_date
+      :third_call_date, :first_call_updater,
+      :second_call_updater, :third_call_updater
     )
   end
 end

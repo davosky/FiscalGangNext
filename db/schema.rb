@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_14_164037) do
+ActiveRecord::Schema.define(version: 2021_08_18_161743) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name"
@@ -71,6 +71,9 @@ ActiveRecord::Schema.define(version: 2021_08_14_164037) do
     t.date "first_call_date"
     t.date "second_call_date"
     t.date "third_call_date"
+    t.string "first_call_updater"
+    t.string "second_call_updater"
+    t.string "third_call_updater"
     t.index ["category_id"], name: "index_requests_on_category_id"
     t.index ["operator_id"], name: "index_requests_on_operator_id"
     t.index ["practice_id"], name: "index_requests_on_practice_id"
